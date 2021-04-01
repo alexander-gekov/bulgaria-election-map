@@ -2,13 +2,14 @@ import Vue from "vue";
 import App from "./App.vue";
 import VueGeolocation from "vue-browser-geolocation";
 import * as VueGoogleMaps from "vue2-google-maps";
+require("dotenv").config();
 
 Vue.use(VueGeolocation);
 Vue.config.productionTip = false;
 
 Vue.use(VueGoogleMaps, {
   load: {
-    key: process.env.API_KEY,
+    key: process.env.VUE_APP_API_KEY,
     libraries: "places",
   },
 });
